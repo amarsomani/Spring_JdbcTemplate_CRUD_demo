@@ -5,8 +5,11 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="find_all_persons",query="select p from Person p")
+//@NamedQuery(name="delete_by_name",query="delete p from Person p where p.name == 'Saket'")
 public class Person {
 
 	@Id

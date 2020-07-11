@@ -28,14 +28,14 @@ public class JPADemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//		logger.info("All Users -> {}",dao.findAll());
+
 		logger.info("User ID 10001 -> {}",repository.findById(1001));
 		logger.info("Inserting 1004 record -> {}",
 				repository.insert(new Person(1004,"Tara", "Berlin",new Date() ) ));
 		logger.info("Updating 1003 record -> {}",
 				repository.update(new Person(1002,"Monika", "Sagar",new Date() ) ));
 		repository.deleteById(1002);
-		
+		logger.info("All Users -> {}",repository.findAll());
 	}
 
 }
